@@ -1,38 +1,128 @@
-.App {
-  text-align: center;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
+  height: 50px;
+  background-color: rgba(102, 16, 83, 0.698);
+  color: white;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-around;
+}
+
+.navbar .logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navbar .list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.navbar .listItem {
+  margin-right: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.navbar .avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.navbar .link {
+  text-decoration: none;
+  list-style-type: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.home {
+  margin-top: 50px;
+  text-align: center;
+}
+.login .wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 7% auto;
+}
+.login .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 40px;
+}
+.login .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 40px;
+}
+.login input {
+  width: 85%;
+  height: 30px;
+  padding: 15px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid gray;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login button {
+  width: 100px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+.login .singleLine {
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+}
+.login .loginButton {
+  font-size: 30px;
+}
+
+.login-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-container {
+  border: 1px solid black;
+  width: 500px;
+  border-radius: 15px;
+  margin: 24px;
+  padding: 24px;
+}
+.form-container input {
+  width: 85%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  margin: 20px;
+  cursor: pointer;
+}
+.form-container .inputs {
+  padding: 10px;
+  font-size: 16px;
+  border-bottom: 2px solid grey;
+}
+
+.container {
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
 }
