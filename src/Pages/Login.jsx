@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { URL } from "../config";
 const Login = () => {
   const google = () => {
-    window.open(`https://oauth-react.onrender.com/auth/google`, "_self");
+    window.open(`https://server-oathu.vercel.app/auth/google`, "_self");
   };
 
   const github = () => {
