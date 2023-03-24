@@ -1,62 +1,27 @@
 import axios from "axios";
-import { useFormik } from "formik";
+
 import { useState } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
 
-import * as yup from "yup";
-
 import { URL } from "../config";
 const Login = () => {
   const google = () => {
-    window.open(`https://oauth-react.onrender.com/auth/google`, "_self");
+    window.open(`https://server-oathu.vercel.app/auth/google`, "_self");
   };
 
   const github = () => {
-    window.open(`https://oauth-react.onrender.com/auth/github`, "_self");
+    window.open(`https://server-oathu.vercel.app/auth/github`, "_self");
   };
 
   const facebook = () => {
-    window.open(`https://oauth-react.onrender.com/auth/facebook`, "_self");
+    window.open(`https://server-oathu.vercel.app/auth/facebook`, "_self");
   };
   const [userEmail, setUserEmail] = useState("");
   const [Pass, setPass] = useState("");
 
   const navigate = useNavigate();
-  const formValidation = yup.object({
-    name: yup.string().required("*Name is mandatory"),
-    email: yup.string().required("*Email is mandatory").min(3),
-    password: yup
-      .string()
-      .required("*Password field is mandatory")
-      .min(6)
-      .max(15),
-    cpassword: yup.string().required("*Confirm your password").min(6).max(15),
-  });
-  const formik = useFormik({
-    initialValues: {
-      name: "",
-      email: "",
-      password: "",
-      cpassword: "",
-    },
-    validationSchema: formValidation,
-    onSubmit: async (values, { resetForm }) => {
-      try {
-        if (values.password === values.cpassword) {
-          const data = await axios.post(`${URL}/users/register`, values);
 
-          alert(data.data.message);
-          resetForm({ values: "" });
-          navigate("/");
-        } else {
-          alert("Password mismatch");
-        }
-      } catch (error) {
-        alert(error.response.data);
-      }
-    },
-  });
   const handleLogin = async () => {
     const data = await axios.post(`${URL}/users/login`, {
       email: userEmail,
@@ -100,42 +65,6 @@ const Login = () => {
           <p>
             Forget Password <Link to="/forgot-password">Click Here</Link>
           </p>
-        </div>
-
-        <div className="right">
-          <h1>Register As New User</h1>
-
-          <input
-            type="text"
-            name="name"
-            onChange={formik.handleChange}
-            value={formik.values.name}
-            placeholder="Username"
-          />
-          <input
-            type="Email"
-            name="email"
-            onChange={formik.handleChange}
-            value={formik.values.email}
-            placeholder="Email"
-          />
-          <input
-            type="password"
-            name="password"
-            onChange={formik.handleChange}
-            value={formik.values.password}
-            placeholder="Password"
-          />
-          <input
-            type="password"
-            name="cpassword"
-            onChange={formik.handleChange}
-            value={formik.values.cpassword}
-            placeholder="Conform_Password"
-          />
-          <button type="submit" onClick={formik.handleSubmit}>
-            Submit
-          </button>
         </div>
       </div>
     </div>

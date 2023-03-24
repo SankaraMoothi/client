@@ -2,17 +2,16 @@ import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Navbar from "./Components/Navbar";
-import ForgetPassword from "./Pages/ForgetPassword";
+
 import Home from "./Pages/Home";
 import Login from "./Pages/Login";
-import PasswordRest from "./Pages/PasswordRest";
 
 function App() {
   const [loginData, setLoginData] = useState(null);
 
   useEffect(() => {
     const getUser = () => {
-      fetch(`https://oauth-react.onrender.com/auth/login/success`, {
+      fetch(`https://server-oathu.vercel.app/auth/login/success`, {
         method: "GET",
         credentials: "include",
         headers: {
@@ -42,8 +41,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home user={loginData} />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/forgot-password" element={<ForgetPassword />} />
-        <Route path="/reset-password/:id/:token" element={<PasswordRest />} />
       </Routes>
     </div>
   );
