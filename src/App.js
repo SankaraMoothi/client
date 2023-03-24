@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     const getUser = () => {
-      fetch(`https://server-oathu.vercel.app/auth/login/success`, {
+      fetch(`https://oauth-react.onrender.com/auth/login/success`, {
         method: "GET",
         credentials: "include",
         headers: {

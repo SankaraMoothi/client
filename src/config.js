@@ -1,1 +1,1 @@
-export const URL = "https://server-oathu.vercel.app";
+export const URL = "https://oauth-react.onrender.com";
