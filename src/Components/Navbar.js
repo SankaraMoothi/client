@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = ({ user }) => {
   const logout = () => {
-    window.open("http://localhost:5000/auth/logout", "_self");
+    window.open("https://server-oathu.vercel.app/auth/logout", "_self");
   };
   console.log(user);
   return (
