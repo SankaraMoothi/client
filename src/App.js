@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     const getUser = () => {
-      fetch(`http://localhost:5000/auth/login/success`, {
+      fetch(`https://server-oathu.vercel.app/auth/login/success`, {
         method: "GET",
         credentials: "include",
         headers: {

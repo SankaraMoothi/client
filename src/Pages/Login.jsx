@@ -9,15 +9,15 @@ import * as yup from "yup";
 import { URL } from "../config";
 const Login = () => {
   const google = () => {
-    window.open(`http://localhost:5000/auth/google`, "_self");
+    window.open(`https://server-oathu.vercel.app/auth/google`, "_self");
   };
 
   const github = () => {
-    window.open(`http://localhost:5000/auth/github`, "_self");
+    window.open(`https://server-oathu.vercel.app/auth/github`, "_self");
   };
 
   const facebook = () => {
-    window.open(`http://localhost:5000/auth/facebook`, "_self");
+    window.open(`https://server-oathu.vercel.app/auth/facebook`, "_self");
   };
   const [userEmail, setUserEmail] = useState("");
   const [Pass, setPass] = useState("");
